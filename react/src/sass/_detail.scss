@@ -1,0 +1,16 @@
+.detail-element {
+    // border: 1px solid red;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    &__label {
+        // border: 1px solid blue;
+        height: fit-content;
+    }
+    &__value {
+        font-size: 22px;
+        // border: 1px solid blue;
+        height: fit-content;
+    }
+}
