@@ -22,3 +22,11 @@
 
     **Поддомены**
     https://www.youtube.com/watch?v=fiOC523zqAs
+
+
+RewriteEngin On
+
+RewriteBase /api
+RewriteCond %{HTTP_HOST} ^(www\.)?alwong9h\.beget\.tech
+RewriteCond % {REQUEST_URI} !^/api/
+RewriteRule ^(.*)$ api/$1 [L]
