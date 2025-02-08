@@ -8,10 +8,10 @@ import Header from "@components/Header";
 
 export default function Register() {
     const dispatch = useDispatch();
-    const [name, setName] = useState("Biden");
-    const [email, setEmail] = useState("biden@biden.biden");
-    const [password, setPassword] = useState("12345678");
-    const [password_confirmation, setPasswordConfirmation] = useState("12345678");
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [password_confirmation, setPasswordConfirmation] = useState("");
     const [register, { isLoading, error }] = useRegisterMutation();
     const [err, setErr] = useState();
 

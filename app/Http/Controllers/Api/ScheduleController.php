@@ -15,7 +15,9 @@ class ScheduleController extends Controller
     {
         $counts = [];
         foreach (range($start, $end) as $year) {
-            $counts["year_{$year}"] = ScheduleDay::where('year', $year)->count();
+            $counts["year_{$year}"] = ScheduleDay::where('user_id', Auth::id())
+                ->where('year', $year)
+                ->count();
         }
         return response()->json(['counts' => $counts]);
     }
@@ -24,7 +26,10 @@ class ScheduleController extends Controller
     {
         $counts = [];
         foreach (range(1, 12) as $month) {
-            $counts["month_{$month}"] = ScheduleDay::where('year', $year)->where('month', $month)->count();
+            $counts["month_{$month}"] = ScheduleDay::where('user_id', Auth::id())
+                ->where('year', $year)
+                ->where('month', $month)
+                ->count();
         }
         return response()->json(['counts' => $counts]);
     }

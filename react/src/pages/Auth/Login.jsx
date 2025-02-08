@@ -9,8 +9,8 @@ import Header from "@components/Header";
 
 export default function Login() {
     const dispatch = useDispatch();
-    const [email, setEmail] = useState("test@test.test");
-    const [password, setPassword] = useState("test1234");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const [login, { isLoading, error }] = useLoginMutation();
     const [err, setErr] = useState();
 
