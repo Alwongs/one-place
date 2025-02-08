@@ -41,14 +41,10 @@ class DashboardController extends Controller
             $event->year = date('Y', $new_timestamp);
         }
 
-
-
         $event->timestamp = $new_timestamp;
 
         $event->update();   
         
         return response()->json(['data' => $event]);
     }
-
-
 }

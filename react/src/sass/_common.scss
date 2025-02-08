@@ -11,6 +11,31 @@ ul     {list-style-type: none;}
     padding-left: 10px;
 }
 
+.not-found-page {
+    background-color: #0d2f46;
+    color: var.$white;
+    min-height: 100vh;
+    &__title {
+        font-size: 44px;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    &__content {
+        text-align: center;
+        font-size: 24px;
+    }
+    &__content-text {
+        margin-right: 10px;
+        color: var.$white;
+    }
+    &__content-link {
+        color: var.$white;
+        text-decoration: underline;
+        color: rgba(rgb(0, 134, 223), 1);
+    }
+}
+
 .app-layout {
     display: flex;
     min-height: 100vh;
@@ -40,7 +65,7 @@ ul     {list-style-type: none;}
     align-items: center;
     margin-bottom: 10px;
     padding: 5px 10px;
-    color: var.$white;
+    color: var.$base-text;
     // background-color: var.$header-bg;
     @media (max-width: var.$mobile-max) {  
         background-color: transparent;
