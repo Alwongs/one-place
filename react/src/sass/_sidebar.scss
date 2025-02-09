@@ -48,6 +48,9 @@
         }              
     } 
 }
+.sidebar-main {
+    margin-bottom: 20px;
+}
 .sidebar-main-auth {
     display: flex;
     gap: 30px;
@@ -69,6 +72,11 @@
         color: var.$btn-red;
     }
 }
+.sidebar-main-nav {
+    padding: 10px 0;
+    border-top: 1px solid rgb(98, 138, 165);
+    border-bottom: 1px solid rgb(98, 138, 165);
+}
 .sidebar-main-nav-item {
     display: block;
     color: var.$white;
@@ -81,5 +89,22 @@
     }
     &.active {
         background-color: var.$nav-link-hover;
+    }
+}
+
+.backend-info-block {
+    padding-left: 20px;
+    &__label {
+        margin-right: 10px;
+        letter-spacing: 0.1px;
+        font-size: 12px;
+        color: var.$yellow;
+    }
+    &__value {
+        letter-spacing: 1px;
+        font-size: 14px;
+        font-weight: 600;
+        &.text-green { color: rgb(0, 214, 0) }
+        &.text-blue { color: blue }
     }
 }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import AuthBlock from "@components/AuthBlock";
 import Navigation from "@components/Navigation";
+import DevelpmentBlock from "../components/DevelpmentBlock";
 
 export default function SideBar({classes}) {  
     const [isOpen, setIsOpen] = useState(false);
@@ -21,6 +22,10 @@ export default function SideBar({classes}) {
                     <AuthBlock />
                     <Navigation onClick={sidebarHandler} />
                 </main>
+                
+                <footer className="sidebar-footer">
+                    <DevelpmentBlock />
+                </footer>
             </aside>        
         </>
     )
