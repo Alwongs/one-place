@@ -30,3 +30,8 @@ RewriteBase /api
 RewriteCond %{HTTP_HOST} ^(www\.)?alwong9h\.beget\.tech
 RewriteCond % {REQUEST_URI} !^/api/
 RewriteRule ^(.*)$ api/$1 [L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.html

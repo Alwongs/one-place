@@ -33,12 +33,12 @@ class DashboardController extends Controller
 
         if ($event->type == 'M') {
             $new_timestamp = strtotime('+1 month', $event->timestamp);
-            $event->month = date('m', $new_timestamp);
+            // $event->month = date('m', $new_timestamp);
         } 
 
         if ($event->type == 'A') {
             $new_timestamp = strtotime('+1 year', $event->timestamp);
-            $event->year = date('Y', $new_timestamp);
+            // $event->year = date('Y', $new_timestamp);
         }
 
         $event->timestamp = $new_timestamp;
