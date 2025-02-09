@@ -2,13 +2,11 @@
 
 .btn-block {
     // border: 3px solid green;
-    // width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    padding: 0 10px;
-    gap: 10px;
+    gap: 10px;   
     &__action {
         display: flex;
         gap: 10px;
@@ -23,9 +21,12 @@
         justify-content: flex-end;
     }
     .auth-link {
-        color: var.$white;
+        color: rgb(170, 228, 255);
         text-decoration: underline;
     }
+    @media (max-width: var.$mobile-max) {
+        padding: 0 10px;
+    }      
 }
 .btn {
     box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.4);
@@ -43,6 +44,10 @@
     border: none;
     cursor: pointer;
     transition: 0.2s;
+    @media (max-width: var.$mobile-max) {
+        min-width: 120px;
+        height: 42px;
+    }      
 }
 
 .btn-red {

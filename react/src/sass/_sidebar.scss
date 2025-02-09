@@ -66,6 +66,7 @@
         font-weight: 600;
         color: rgb(0, 102, 68);
         font-size: 20px;
+        text-transform: capitalize;
     }
     &__logout-link {
         margin-top: 2px;
@@ -104,7 +105,10 @@
         letter-spacing: 1px;
         font-size: 14px;
         font-weight: 600;
+        text-transform: uppercase;
         &.text-green { color: rgb(0, 214, 0) }
-        &.text-blue { color: blue }
+        &.text-blue {
+            color: rgb(58, 160, 255);
+        }
     }
 }

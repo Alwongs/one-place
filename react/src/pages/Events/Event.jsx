@@ -7,8 +7,6 @@ export default function Event() {
     const { id } = useParams();
     const { data = {}, isLoading } = useGetEventQuery(id);
 
-    console.log(data)
-
     if (!data) return "loading";
 
     return (

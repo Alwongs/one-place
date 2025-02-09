@@ -1,24 +1,24 @@
 import NavigationLink from "./NavigationLink";
 
-const navLinks = [
-    { title: "Dashboard", path: "/"},
-    { title: "Users", path: "/users"},
-    { title: "Events", path: "/events"},
-    { title: "Tasks", path: "/tasks"},
-    { title: "Schedule", path: "/schedule"},
-]
+export default function Navigation({ onClick, isRoot }) {
 
+    const navLinks = [
+        { title: "Dashboard", path: "/", show: true },
+        { title: "Users", path: "/users", show: isRoot },
+        { title: "Events", path: "/events", show: true },
+        { title: "Tasks", path: "/tasks", show: true },
+        { title: "Schedule", path: "/schedule", show: true },
+    ]
 
-export default function Navigation({onClick}) {
     return (
         <nav className="sidebar-main-nav">
-
             {navLinks.map((link) => (
                 <NavigationLink
                     key={link.title}
                     title={link.title}
                     path={link.path}
                     onClick={onClick}
+                    show={link.show}
                 />                
             ))}
         </nav>        

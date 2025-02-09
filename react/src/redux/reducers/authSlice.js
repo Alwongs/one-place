@@ -1,25 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
+import readUserFromLocalStorage from "@redux-utils/readUserFromLocalStorage";
 
 const authSlice = createSlice({
     name: "auth",
     initialState: {
-        user: {
-            name: localStorage.getItem("USER_NAME")
-        },
+        user: readUserFromLocalStorage(),
         token: localStorage.getItem("ACCESS_TOKEN")
     },
     reducers: {
         setAuth: (state, action) => {
             state.user = action.payload.user;
             state.token = action.payload.token;
+            localStorage.setItem("USER", JSON.stringify(action.payload.user));
             localStorage.setItem("ACCESS_TOKEN", action.payload.token);
-            localStorage.setItem("USER_NAME", action.payload.user.name);
         },
         removeAuth: (state) => {
             state.user = null;
             state.token = null;
-            localStorage.removeItem("ACCESS_TOKEN");
-            localStorage.removeItem("USER_NAME");
+            localStorage.clear();
         },
     },
 });

@@ -18,7 +18,6 @@ export default function Login() {
         e.preventDefault();
         try {
             const result = await login({ email, password }).unwrap();
-            console.log(result)
             dispatch(setAuth(result));
         } catch (err) {
             console.error("Ошибка авторизации:", err);

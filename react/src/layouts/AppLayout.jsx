@@ -1,11 +1,10 @@
 import { Outlet, Navigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import TopPanel from "@layouts/TopPanel";
 import SideBar from "@layouts/SideBar";
 
 
 export default function AppLayout() {
-
     const token = useSelector((state) => state.auth.token);
 
     if (!token) {

@@ -11,8 +11,10 @@ export default function Task() {
             <Header title={data.title} />
 
             <main className="main">
-                <div className="main__col col-6">
-                    <p>{data.description}</p>
+                <div className="section">
+                    <div className="section__col col-6">
+                        <p>{data.description}</p>
+                    </div>
                 </div>
             </main>
         </>

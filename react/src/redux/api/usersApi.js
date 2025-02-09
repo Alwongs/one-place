@@ -16,7 +16,7 @@ export const usersApi = createApi({
             :   [{ type: "Users", id: "LIST" }],            
         }), 
         getUser: build.query({
-            query: (id) => `user/${id}`,
+            query: (id) => `users/${id}`,
             providesTags: (result, error, id) => [{ type: "User", id }],  
         }),  
         deleteUser: build.mutation({
