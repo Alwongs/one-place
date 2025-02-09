@@ -27,8 +27,8 @@ export default function Login() {
     };
 
     return (
-        <div className="container">
-            <Header title="Login" />
+        <>
+            <Header classes="auth-header" title="Login" />
 
             { isLoading && <Loading /> }
 
@@ -56,7 +56,7 @@ export default function Login() {
                                 </div>
 
                                 <div className="btn-block flex-between">
-                                    <Link to={"/register"}>Create an account</Link>
+                                    <Link className="auth-link" to={"/register"}>Create an account</Link>
                                     <button className="btn btn-green">Login</button>                        
                                 </div>
 
@@ -67,6 +67,6 @@ export default function Login() {
                     </div>
                 </div>
             )}
-        </div>
+        </>
     );
 };

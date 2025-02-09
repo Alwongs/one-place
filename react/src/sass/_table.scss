@@ -35,7 +35,8 @@
         @media (max-width: var.$mobile-max) {  
             width: 17ch;             
             max-width: 100%;             
-            flex: 1 0 185px;               
+            flex: 1 0 185px;   
+            font-size: 22px;            
         }           
     }
     &__actions {
@@ -43,4 +44,7 @@
         align-items: center;
 
     }
+    @media (max-width: var.$mobile-max) {  
+        height: 44px;              
+    }     
 }

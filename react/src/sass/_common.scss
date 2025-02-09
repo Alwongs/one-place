@@ -37,6 +37,7 @@ ul     {list-style-type: none;}
 }
 
 .app-layout {
+    background-color: #0d2f46;
     display: flex;
     min-height: 100vh;
     &__sidebar {
@@ -47,6 +48,11 @@ ul     {list-style-type: none;}
         background-color: var.$content-bg;
         flex: 1 1 auto;        
     }
+}
+.guest-layout {
+    background-color: #0d2f46;
+    color: var.$white;
+    min-height: 100vh;    
 }
 .breadcrumbs {
     padding: 5px 10px;
@@ -66,7 +72,9 @@ ul     {list-style-type: none;}
     margin-bottom: 10px;
     padding: 5px 10px;
     color: var.$base-text;
-    // background-color: var.$header-bg;
+    &.auth-header {
+        color: var.$white;
+    }
     @media (max-width: var.$mobile-max) {  
         background-color: transparent;
         color: var.$base-text;   

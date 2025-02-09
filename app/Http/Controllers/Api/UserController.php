@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\User\StoreRequest;
 use App\Http\Requests\User\UpdateRequest;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\UserResource;
 
 class UserController extends Controller
@@ -15,7 +16,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        return response()->json(['users' => User::all()]);
+        if (Auth::user()->is_root) {
+            return response()->json(['users' => User::all()]); // make middleware!
+        }
+
+        return response()->json(['users' => []]);
     }
 
     /**

@@ -31,14 +31,16 @@ export default function AddTask() {
             <Header title="Create Task" />
 
             <main className="main">
-                <div className="main__col col-8">
-                    <Form
-                        formData={formData}
-                        onChange={handleChange}
-                        onSubmit={handleSubmit}
-                    />
-                    <Loading isLoading={isLoading} />
-                </div>
+                <section className="section">
+                    <div className="section__col col-8">
+                        <Form
+                            formData={formData}
+                            onChange={handleChange}
+                            onSubmit={handleSubmit}
+                        />
+                        <Loading isLoading={isLoading} />
+                    </div>
+                </section>
             </main>
         </>         
     )

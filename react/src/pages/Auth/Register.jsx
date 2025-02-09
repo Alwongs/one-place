@@ -27,7 +27,7 @@ export default function Register() {
     };
 
     return (
-        <div className="container">
+        <>
             <Header title="Register" />
 
             { isLoading && <Loading /> }                 
@@ -78,7 +78,7 @@ export default function Register() {
                                 </div>   
 
                                 <div className="btn-block flex-between">
-                                    <Link to={"/login"}>Already registered?</Link>
+                                    <Link className="auth-form-btn-block-link" to={"/login"}>Already registered?</Link>
                                     <button type="submit" className="btn btn-green">
                                         Войти
                                     </button>
@@ -91,6 +91,6 @@ export default function Register() {
                     </div>
                 </main>
             )}
-        </div>
+        </>
     );
 };
