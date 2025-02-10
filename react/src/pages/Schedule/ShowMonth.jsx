@@ -20,15 +20,15 @@ export default function ShowMonth() {
                 month={month}
             />
 
-            <main className="main">
-                <MonthBtnBlock
-                    isContent={data.schedule_days?.length !== 0}
-                    onClick={handleDeleteMonth}
-                    backPath={`/schedule/${year}`}
-                    year={year}
-                    month={month}
-                />    
+            <MonthBtnBlock
+                isContent={data.schedule_days?.length !== 0}
+                onClick={handleDeleteMonth}
+                backPath={`/schedule/${year}`}
+                year={year}
+                month={month}
+            />              
 
+            <main className="main">  
                 <section className="section">
                     <div className="section__col col-6">
                         {data.schedule_days?.length !== 0 && (

@@ -50,20 +50,18 @@
     &__title {
         flex: 1 0 200px;
         color: var.$base-text;
-        font-weight: 500;
+        font-size: 20px;
+        font-weight: 600;
         font-style: italic;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis; 
-        width: 21ch;   
-        &::first-letter {
-            text-transform: capitalize;
-        }
+        width: 21ch;  
         &.overdue, &.today {
             color: red;
         }  
         &.overdue {
-            font-size: 12px;
+            font-size: 16px;
         }
         &.today {
             font-size: 18px;

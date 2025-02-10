@@ -3,12 +3,13 @@ import { timestampToDate } from "@functions/datetime";
 import TableActions from "@components/table/TableActions";
 import CardItemLink from "./CardItemLink";
 
-export default function CardItem({item, title, object}) {
+export default function CardItem({item, cardTitle, object}) {
 
     return (
-        <li className={`card-row ${title}`}>
+        <li className={`card-row ${cardTitle}`}>
 
             <CardItemLink
+                cardTitle={cardTitle}
                 title={item.title}
                 path={`/${object}/${item.id}`}
                 date={timestampToDate(item.timestamp)}

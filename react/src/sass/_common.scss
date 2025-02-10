@@ -60,7 +60,7 @@ ul     {list-style-type: none;}
     margin-bottom: 10px;
     a, span { color: var.$white; }
     @media (max-width: var.$mobile-max) { 
-        margin-bottom: 0; 
+        font-size: 18px;
         background-color: transparent;
         a, span { color: var.$base-text; }        
     }

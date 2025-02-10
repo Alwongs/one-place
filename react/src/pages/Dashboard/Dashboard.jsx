@@ -9,7 +9,7 @@ export default function Dashboard() {
 
             <main className="main">
                 <div className="section">
-                    <div className="section__col col-4">
+                    <div className="section__col col-6">
                         <Reminder />
                     </div>
                 </div>
