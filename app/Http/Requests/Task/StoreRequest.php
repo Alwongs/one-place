@@ -22,15 +22,17 @@ class StoreRequest extends FormRequest
      */
     public function rules(): array
     {
+        $userId = $this->user()->id;
+
         return [
             // 'user_id' => ['required'],
-            'title'       => [
-                'required', 
-                'string', 
-                'max:255',
-                Rule::unique('tasks', 'title')->where(function ($query) {
-                    return $query->where('user_id', $this->user_id);
-                }),              
+            'title' => [
+                'required',
+                'string',
+                'max:255', // Ограничение длины, если нужно
+                Rule::unique('tasks')->where(function ($query) use ($userId) {
+                    return $query->where('user_id', $userId);
+                }),
             ],
             'description' => ['nullable', 'string'],
             'position' => ['required'],

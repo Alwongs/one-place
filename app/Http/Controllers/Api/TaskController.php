@@ -13,7 +13,7 @@ class TaskController extends Controller
 {
     public function index()
     {
-        $tasks = Task::orderBy('rate', 'DESC')->orderBy('position', 'ASC')->get();
+        $tasks = Task::where('user_id', Auth::id())->orderBy('rate', 'DESC')->orderBy('position', 'ASC')->get();
         return response()->json(['tasks' => $tasks]);
     }
 
@@ -38,8 +38,12 @@ class TaskController extends Controller
 
     public function update(UpdateRequest $request, Task $task)
     {
-        $task->update($request->all());
-        return response()->json(['data' => new TaskResource($task)]);
+        if ($request->validated()) {        
+            $task->update($request->all());
+            return response()->json(['data' => new TaskResource($task)]);
+        } else {
+            return response()->json(['message' => 'not validated']); 
+        }        
     }
 
     public function destroy(Task $task)

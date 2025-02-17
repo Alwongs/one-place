@@ -1,5 +1,5 @@
 import { Outlet, Navigate } from "react-router-dom";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import TopPanel from "@layouts/TopPanel";
 import SideBar from "@layouts/SideBar";
 

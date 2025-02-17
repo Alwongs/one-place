@@ -22,19 +22,30 @@ class UpdateRequest extends FormRequest
      */
     public function rules(): array
     {
+        $taskId = $this->id;
+        $userId = $this->user()->id;
+
         return [
-            'user_id' => ['required'],
-            'title'       => [
-                'required', 
-                'string', 
+            'user_id'     => ['required'],
+            'title' => [
+                'required',
+                'string',
                 'max:255',
-                Rule::unique('tasks', 'title')->where(function ($query) {
-                    return $query->where('user_id', $this->user_id);
-                }),              
+                Rule::unique('tasks')->where(function ($query) use ($userId) {
+                    return $query->where('user_id', $userId);
+                })->ignore($taskId),
             ],
             'description' => ['nullable', 'string'],
             'position' => ['required'],
             'status' => ['required'],
         ];
     }
+    public function messages()
+    {
+        return [
+            'title.unique' => 'The title is alredy exists in this category',
+            'user_id.required' => 'user_id is required',
+            'description.nullable' => 'something about nullable'
+        ];
+    }      
 }

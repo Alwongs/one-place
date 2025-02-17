@@ -10,7 +10,7 @@ export default function AddTask() {
     const location = useLocation();
     const previousPath = location.state?.from || "/"; 
     const [createItem, { isLoading, isSuccess, isError }] = useAddTaskMutation();
-    const [formData, setFormData] = useState({ title: "", description: "", rate: "", position: "", status: "A" });
+    const [formData, setFormData] = useState({ title: "", rate: "5", position: "0", status: "A", description: "" });
 
     const handleChange = (e) => {
         const { name, value } = e.target;

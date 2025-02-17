@@ -10,7 +10,7 @@ export default function EditTask() {
     const previousUrl = location.state?.from || "/"; 
     const { id } = useParams();
     const { data: task, error, isLoading } = useGetTaskQuery(id);
-    const [updateCar, { isSuccess, isError }] = useUpdateTaskMutation();
+    const [updateTask, { isSuccess, isError }] = useUpdateTaskMutation();
     
     const [formData, setFormData] = useState({ title: "", description: "", rate: "", position: "", status: "" });
   
@@ -30,7 +30,8 @@ export default function EditTask() {
   
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await updateCar({ id, ...formData });
+        console.log(formData)
+        await updateTask({ id, ...formData });
         navigate(previousUrl);
     };
   
