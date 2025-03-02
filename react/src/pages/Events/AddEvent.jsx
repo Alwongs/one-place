@@ -30,7 +30,7 @@ export default function AddEvent() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await addEvent({
+        const result = await addEvent({
             type: formData.type,
             title: formData.title,
             description: formData.description,
@@ -40,7 +40,13 @@ export default function AddEvent() {
                 year: formData.year
             })            
         });
-        navigate(previousPath);
+        console.log(result)
+        // if (result) {
+        //     navigate(previousPath);
+        // } else {
+        //     console.log(isError)
+        // }
+
     };    
 
     return (

@@ -2,8 +2,6 @@ import { getDateFromTimestamp, getMonthFromTimestamp, getFullYearFromTimestamp }
 
 export const tsToDateManage = (events) => {
 
-
-
     const newArray = events?.map(event => ({
         ...event,
         day: getDateFromTimestamp(event.timestamp),
@@ -11,8 +9,6 @@ export const tsToDateManage = (events) => {
         year: getFullYearFromTimestamp(event.timestamp),
         date: getDateFromTimestamp(event.timestamp) + "." + getMonthFromTimestamp(event.timestamp) + "." + getFullYearFromTimestamp(event.timestamp)
     }));
-
-
 
     return newArray;
 }

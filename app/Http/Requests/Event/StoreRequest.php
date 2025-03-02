@@ -5,6 +5,7 @@ namespace App\Http\Requests\Event;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Helpers\DateHelper;
 use Illuminate\Validation\Validator;
+use Illuminate\Validation\Rule;
 
 class StoreRequest extends FormRequest
 {
@@ -23,13 +24,30 @@ class StoreRequest extends FormRequest
      */
     public function rules(): array
     {
+        $userId = $this->user()->id;
+        
         return [
-            'title'       => ['required', 'string', 'max:100'],
+            'title' => [
+                'required',
+                'string',
+                'max:100',
+                Rule::unique('events')->where(function ($query) use ($userId) {
+                    return $query->where('user_id', $userId);
+                }),
+            ],
             'description' => ['nullable', 'string'],
             'type'        => ['required', 'max:2'],
             'timestamp'   => ['required', 'max:10']
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.unique' => 'The title is alredy exists in this category',
+            'user_id.required' => 'user_id is required'
+        ];
+    }  
 
     // public function after(): array
     // {
