@@ -11,6 +11,8 @@ use App\Http\Controllers\Api\ScheduleDayController;
 use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\ScheduleController;
 
+use App\Http\Controllers\Api\LogController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -68,3 +70,5 @@ Route::get('/cats', function (Request $request) {
         ],
     ];
 });
+
+Route::get('/log', [LogController::class, 'index']);
