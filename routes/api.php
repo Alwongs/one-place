@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\TaskController;
-use App\Http\Controllers\Api\CarController;
+use App\Http\Controllers\Api\ToolController;
 use App\Http\Controllers\Api\EventController;
 use App\Http\Controllers\Api\ScheduleDayController;
 use App\Http\Controllers\Api\DashboardController;
@@ -47,7 +47,7 @@ Route::middleware('auth:sanctum')->group(function () {
         'users' => UserController::class,
         'events' => EventController::class,
         'tasks'  => TaskController::class,
-        'cars' => CarController::class,
+        'tools' => ToolController::class,
     ]);
 });
 

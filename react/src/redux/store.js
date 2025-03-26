@@ -5,6 +5,7 @@ import { authApi } from "@api/authApi";
 import { usersApi } from "@api/usersApi";
 import { eventsApi } from "@api/eventsApi";
 import { tasksApi } from "@api/tasksApi";
+import { toolsApi } from "@api/toolsApi";
 import { scheduleDaysApi } from "@api/scheduleDaysApi";
 
 const store = configureStore({
@@ -14,6 +15,7 @@ const store = configureStore({
         [usersApi.reducerPath]: usersApi.reducer,
         [eventsApi.reducerPath]: eventsApi.reducer,
         [tasksApi.reducerPath]: tasksApi.reducer,
+        [toolsApi.reducerPath]: toolsApi.reducer,
         [scheduleDaysApi.reducerPath]: scheduleDaysApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
@@ -22,6 +24,7 @@ const store = configureStore({
             .concat(usersApi.middleware)
             .concat(eventsApi.middleware)
             .concat(tasksApi.middleware)
+            .concat(toolsApi.middleware)
             .concat(scheduleDaysApi.middleware)
 });
 

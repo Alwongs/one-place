@@ -7,6 +7,7 @@ export default function Navigation({ onClick, isRoot }) {
         { title: "Users", path: "/users", show: isRoot },
         { title: "Events", path: "/events", show: true },
         { title: "Tasks", path: "/tasks", show: true },
+        { title: "Tools", path: "/tools", show: true },
         { title: "Schedule", path: "/schedule", show: true },
     ]
 

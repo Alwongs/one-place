@@ -4,6 +4,7 @@ import  {
     Users, User, AddUser, EditUser,
     Events, Event, AddEvent, EditEvent,
     Tasks, Task, AddTask, EditTask,
+    Tools, AddTool, EditTool, Tool,
     Schedule, AddDays, EditDay, ShowYear, ShowMonth, ShowDay,
     Dashboard
 }  from "@router";
@@ -30,6 +31,11 @@ export default  createBrowserRouter([
             { path: "tasks/:id", element: <Task /> },
             { path: "tasks/create", element: <AddTask /> },
             { path: "tasks/edit/:id", element: <EditTask /> },
+
+            { path: "tools", element: <Tools /> },
+            { path: "tools/:id", element: <Tool /> },
+            { path: "tools/create", element: <AddTool /> },
+            { path: "tools/edit/:id", element: <EditTool /> },            
 
             { path: "/schedule", element: <Schedule /> },
             { path: "/schedule/:year", element: <ShowYear /> },

@@ -19,6 +19,13 @@ export { default as Task }  from "@pages/Tasks/Task";
 export { default as AddTask }  from "@pages/Tasks/AddTask";
 export { default as EditTask }  from "@pages/Tasks/EditTask";
 
+
+export { default as Tools }  from "@pages/Tools/Tools";
+export { default as Tool }  from "@pages/Tools/Tool";
+export { default as AddTool }  from "@pages/Tools/AddTool";
+export { default as EditTool }  from "@pages/Tools/EditTool";
+
+
 export { default as Schedule }  from "@pages/Schedule/Schedule";
 export { default as AddDays }  from "@pages/Schedule/AddDays";
 export { default as EditDay }  from "@pages/Schedule/EditDay";
