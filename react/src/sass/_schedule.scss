@@ -41,6 +41,35 @@
         }
     }
 }
+.schedule-month-info {
+    // border: 1px solid red;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    p {
+
+        width: 200px;
+        padding: 4px 10px;
+        font-size: 16px;
+    }
+    span {
+        margin-right: 10px;
+    }
+    &__days {
+        background-color: var.$schedule-item-bg;
+        color: var.$white;
+    }
+    &__nights {
+        background-color: var.$blue;
+        color: var.$white;
+    }
+    &__hours {
+        background-color: var.$white;
+        color: var.$base-text;
+    }
+}
 
 option {
     &.option-d {

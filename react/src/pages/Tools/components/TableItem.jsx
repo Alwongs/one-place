@@ -12,7 +12,7 @@ export default function TableItem({ item, object, deleteMutation }) {
                 path={`/${object}/${item.id}`}
             />
 
-            <div>
+            <div className="table-row__qty">
                 <b>{item.qty}</b> <small>pс</small>
             </div>
 

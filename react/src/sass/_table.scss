@@ -39,6 +39,11 @@
             font-size: 22px;            
         }           
     }
+    &__qty {
+        @media (max-width: var.$mobile-max) {    
+            font-size: 22px;            
+        }          
+    }
     &__actions {
         display: flex;
         align-items: center;
