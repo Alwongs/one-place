@@ -41,19 +41,62 @@
         }
     }
 }
+.schedule-month-info-wrapper {
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // right: 0;
+}
 .schedule-month-info {
     // border: 1px solid red;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    width: 240px;
+    margin: 0 auto;
+    padding: 10px;
+    margin-bottom: 40px;
     gap: 5px;
-    p {
-
-        width: 200px;
-        padding: 4px 10px;
-        font-size: 16px;
+    &__close-modal {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        cursor: pointer;
     }
+    &__row {
+        border-bottom: 1px solid rgb(110, 158, 185);
+        display: flex;
+        align-items: center;   
+        margin-bottom: 10px;
+        padding-bottom: 4px;
+        color: blue;
+        &.income {
+            color: green;
+        }
+        &.outcome {
+            color: red;
+        }
+    }
+    &__label {
+        flex: 0 0 100px;
+        text-align: end;
+        padding-right: 20px;
+        font-size: 14px;
+    }
+    // p {
+
+    //     width: 200px;
+    //     padding: 4px 10px;
+    //     font-size: 16px;
+    // }
     span {
         margin-right: 10px;
     }
@@ -69,6 +112,9 @@
         background-color: var.$white;
         color: var.$base-text;
     }
+    @media (max-width: var.$mobile-max) {  
+        width: 90%;
+    }     
 }
 
 option {
