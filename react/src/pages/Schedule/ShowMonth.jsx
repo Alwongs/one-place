@@ -68,6 +68,8 @@ export default function ShowMonth() {
 
             {showModal && (
                 <Salary
+                    year={year}
+                    month={month}
                     workDaysCount={workDaysCount}
                     workNightsCount={workNightsCount}
                     closeModalHandler={closeModalHandler}
