@@ -12,7 +12,6 @@ export default function ShowMonth() {
     const [ deleteScheduleMonth, { isSuccess, isError } ] = useDeleteScheduleMonthMutation();
     const [ showModal, setShowModal ] = useState(false);
     const handleDeleteMonth = async (e) => {
-        e.preventDefault();
         await deleteScheduleMonth({ year, month });
     }; 
 

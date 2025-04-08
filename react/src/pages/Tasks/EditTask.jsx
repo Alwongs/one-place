@@ -30,7 +30,6 @@ export default function EditTask() {
   
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData)
         await updateTask({ id, ...formData });
         navigate(previousUrl);
     };
