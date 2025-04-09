@@ -17,7 +17,7 @@ class ToolController extends Controller
      */
     public function index()
     {
-        $tools = Tool::where('user_id', Auth::id())->orderBy('title', 'DESC')->orderBy('qty', 'ASC')->get();
+        $tools = Tool::where('user_id', Auth::id())->orderBy('title', 'ASC')->orderBy('qty', 'DESC')->get();
         return response()->json(['tools' => $tools]);
     }
 
