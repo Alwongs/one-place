@@ -6,7 +6,7 @@ export default function SalaryElement({ label, qty = "", value, unit = "", class
             <div className="schedule-month-info__qty">{qty}</div>
 
             <div className="schedule-month-info__value">
-                <strong>{value}</strong> <small>{unit}</small>
+                <span>{value}</span><small>{unit}</small>
             </div>
         </div>
     )

@@ -90,11 +90,18 @@
         }            
     }
     &__row {
-        border-bottom: 1px solid rgb(189, 205, 214);
+        border-top: 1px solid rgb(203, 220, 230);
+        &.sum-line {
+            border-top: 1px solid rgb(154, 168, 175); 
+        }
+        &.bold span {
+            font-weight: 600;
+        }
         display: flex;
+        justify-content: space-between;
         align-items: center;   
         // margin-bottom: 10px;
-        padding-bottom: 2px;
+        padding-top: 4px;
         color: blue;
         &.income {
             color: green;
@@ -113,12 +120,24 @@
             font-size: 18px;
         }           
     }
+    &__qty {
+        // border: 1px solid red;
+        font-size: 12px;
+        text-align: center;
+        @media (max-width: var.$mobile-max) {  
+            font-size: 16px;
+        }          
+    }
     &__value {
-        flex: 1 0 auto;
+        // border: 1px solid green;
+        flex: 0 0 80px;
         text-align: end;
+        @media (max-width: var.$mobile-max) {  
+            flex: 0 0 120px;
+        }         
     }
     span {
-        margin-right: 10px;
+        margin-right: 4px;
     }
     &__days {
         background-color: var.$schedule-item-bg;
@@ -153,9 +172,9 @@
 .month-settings-modal {
     box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
     background-color: #fff;
-    width: 80%;
+    width: 90%;
     // height: 80%;
-    padding: 10px;
+    padding: 10px 10px 20px;
     &__close-modal {
         display: flex;
         justify-content: space-between;
@@ -174,43 +193,39 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 10px;
+        gap: 15px;
         // margin-bottom: 20px;
     }
     &__label {
         // border: 1px solid red;
         font-size: 14px;
-        flex: 0 0 60px;
+        flex: 0 0 130px;
         text-align: end;
-        @media (max-width: var.$mobile-max) {  
+        @media (max-width: var.$mobile-max) {
+            flex: 0 0 154px;
             font-size: 18px;
         }           
     }
     &__input {
-        // border: 1px solid blue;
+        // border: 1px solid red;
         position: relative;
         height: 28px;
-        flex: 0 0 fit-content;
+        flex: 1 0 fit-content;
         @media (max-width: var.$mobile-max) {  
+            // flex: 0 0 100px;
             height: 38px;
         }   
-        &::after {
-            content: "h";
-            // border: 1px solid blue;
-            width: 10px;
-            height: 10px;
-            position: absolute;
-            right: 5px;
-            top: 8px;
-            font-size: 12px;
-            color: rgba(46, 60, 75, 0.527);
-            font-weight: 600;
-        }
         input {
             width: 100px;
             height: 100%;
             font-size: 18px;
             padding-left: 8px;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid rgb(147, 173, 194);
+            &:focus {
+                border-bottom: 1px solid rgb(0, 63, 122);
+            }
             @media (max-width: var.$mobile-max) {  
                 font-size: 20px;
             }               
