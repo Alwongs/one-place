@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\EventController;
 use App\Http\Controllers\Api\ScheduleDayController;
 use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\ScheduleController;
+use App\Http\Controllers\Api\MotherController;
 
 use App\Http\Controllers\Api\LogController;
 
@@ -72,3 +73,10 @@ Route::get('/cats', function (Request $request) {
 });
 
 Route::get('/log', [LogController::class, 'index']);
+
+// mother's routes
+Route::get('mother-schedule-days-in-month-count/{year}', [MotherController::class, 'getDaysInMonthCount']);
+Route::get('mother-schedule-days-in-year-count/{start}/{end}', [MotherController::class, 'getDaysInYearCount']);
+
+Route::get('/mother-schedule-month/{year}/{month}', [MotherController::class, 'getYearMonthDays']);
+Route::get('/mother-schedule-day/{id}', [MotherController::class, 'getYearMonthDay']);

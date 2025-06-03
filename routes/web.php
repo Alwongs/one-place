@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/{any}', function () {
-    return redirect('/');
+    return "<h1>404</h1> <h4>The page is not found</h4>";
 })->where('any', '.*');

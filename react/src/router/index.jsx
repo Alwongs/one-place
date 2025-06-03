@@ -33,4 +33,9 @@ export { default as ShowYear }  from "@pages/Schedule/ShowYear";
 export { default as ShowMonth }  from "@pages/Schedule/ShowMonth";
 export { default as ShowDay }  from "@pages/Schedule/ShowDay";
 
+export { default as MotherSchedule }  from "@pages/Mother/Schedule";
+export { default as MotherShowYear }  from "@pages/Mother/ShowYear";
+export { default as MotherShowMonth }  from "@pages/Mother/ShowMonth";
+export { default as MotherShowDay }  from "@pages/Mother/ShowDay";
+
 export { default as Dashboard } from "@pages/Dashboard/Dashboard";

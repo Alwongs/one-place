@@ -7,6 +7,7 @@ import { eventsApi } from "@api/eventsApi";
 import { tasksApi } from "@api/tasksApi";
 import { toolsApi } from "@api/toolsApi";
 import { scheduleDaysApi } from "@api/scheduleDaysApi";
+import { motherScheduleDaysApi } from "@api/motherScheduleDaysApi";
 
 const store = configureStore({
     reducer: {
@@ -17,6 +18,7 @@ const store = configureStore({
         [tasksApi.reducerPath]: tasksApi.reducer,
         [toolsApi.reducerPath]: toolsApi.reducer,
         [scheduleDaysApi.reducerPath]: scheduleDaysApi.reducer,
+        [motherScheduleDaysApi.reducerPath]: motherScheduleDaysApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware()
@@ -26,6 +28,7 @@ const store = configureStore({
             .concat(tasksApi.middleware)
             .concat(toolsApi.middleware)
             .concat(scheduleDaysApi.middleware)
+            .concat(motherScheduleDaysApi.middleware)
 });
 
 setupListeners(store.dispatch); // настройка слушателей для RTK Query 
