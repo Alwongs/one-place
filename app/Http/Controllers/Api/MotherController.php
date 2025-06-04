@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\ScheduleDay;
+use App\Http\Resources\ScheduleResource;
 
 class MotherController extends Controller
 {
