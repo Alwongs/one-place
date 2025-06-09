@@ -44,8 +44,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/schedule-update-day/{id}', [ScheduleController::class, 'updateDay']);
     Route::delete('/schedule-delete-month/{year}/{month}', [ScheduleController::class, 'deleteMonth']);
 
-    Route::get('/mother-vizits', [MotherController::class, 'getMotherVizits']);
-    Route::delete('/mother-vizit-delete', [MotherController::class, 'deleteMotherVizit']);
+    // Route::get('/mother-vizits', [MotherController::class, 'getMotherVizits']);
+    // Route::delete('/mother-vizit-delete', [MotherController::class, 'deleteMotherVizit']);
 
     Route::apiResources([
         'users' => UserController::class,

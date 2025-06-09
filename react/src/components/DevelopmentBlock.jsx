@@ -2,7 +2,7 @@ export default function DevelpmentBlock() {
 
     let backend = "";
     let classes = "";
-    if (import.meta.env.VITE_API_URL == "http://one-place") {
+    if (import.meta.env.VITE_API_URL == "https://one-place") {
         backend = "Local";
         classes = "text-green";
     } else {

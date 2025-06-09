@@ -8,7 +8,7 @@ use App\Models\User;
 use App\Models\MotherVizit;
 use App\Models\ScheduleDay;
 use App\Http\Resources\ScheduleResource;
-use Jenssegers\Agent\Agent;
+// use Jenssegers\Agent\Agent;
 
 class MotherController extends Controller
 {
@@ -47,15 +47,15 @@ class MotherController extends Controller
 
     public function getYearMonthDays($year, $month)
     {
-        $vizit['description'] = '';
-        $agent = new Agent();
-        if ($agent) {
-            $device = $agent->device() ?? '';
-            $platform = $agent->platform() ?? ''; 
-            $vizit['description'] = $device . ' and ' . $platform;
-        }
+        // $vizit['description'] = '';
+        // $agent = new Agent();
+        // if ($agent) {
+        //     $device = $agent->device() ?? '';
+        //     $platform = $agent->platform() ?? ''; 
+        //     $vizit['description'] = $device . ' and ' . $platform;
+        // }
 
-        MotherVizit::create($vizit);
+        // MotherVizit::create($vizit);
 
         $rootUser = User::where('is_root', 1)->first();
         if (!$rootUser) {
@@ -76,10 +76,10 @@ class MotherController extends Controller
     }
 
 
-    public function getMotherVizits()
-    {
-        $vizits = MotherVizit::all();
+    // public function getMotherVizits()
+    // {
+    //     $vizits = MotherVizit::all();
 
-        return response()->json(['vizits' => $vizits]);
-    }
+    //     return response()->json(['vizits' => $vizits]);
+    // }
 }
