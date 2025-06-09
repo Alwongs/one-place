@@ -70,4 +70,4 @@ Route::get('/mother-schedule-day/{id}', [MotherController::class, 'getYearMonthD
 
 Route::get('/siski', function() {
     return 'siski is good!';
-})
+});
