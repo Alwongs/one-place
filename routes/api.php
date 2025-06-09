@@ -68,6 +68,6 @@ Route::get('mother-schedule-days-in-year-count/{start}/{end}', [MotherController
 Route::get('/mother-schedule-month/{year}/{month}', [MotherController::class, 'getYearMonthDays']);
 Route::get('/mother-schedule-day/{id}', [MotherController::class, 'getYearMonthDay']);
 
-Route::get('siski', function() {
+Route::get('/siski', function() {
     return 'siski is good!';
 })
