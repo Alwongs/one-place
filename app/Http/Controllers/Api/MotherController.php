@@ -65,6 +65,9 @@ class MotherController extends Controller
     {
         $agent = new Agent();
         $device = $agent->device() ?? '';
+        if ($agent->isMobile()) {
+            $device = 'Mobile App is used';
+        }
         $platform = $agent->platform() ?? '';
         $parts = array_filter([$device, $platform]);
         return implode(' and ', $parts);
@@ -82,5 +85,13 @@ class MotherController extends Controller
         $vizits = MotherVizit::all();
 
         return response()->json(['vizits' => $vizits]);
+    }
+
+    public function deleteMotherVizit($id)
+    {
+
+        MotherVizit::destroy($id);
+
+        return response()->json(['message' => 'MotherVizit removed']);
     }
 }

@@ -3,7 +3,7 @@ import EditBtn from "./btn/EditBtn";
 import DeleteBtn from "./btn/DeleteBtn";
 import PostponeBtn from "@components/table/btn/PostponeBtn";
 
-export default function TableActions({ itemId, itemType = null, editPath, returnPath, deleteMutation, postponeMutation = null, template }) {
+export default function TableActions({ itemId, itemType = null, editPath, returnPath, deleteMutation, postponeMutation = null, template, hideEditBtn = false }) {
     const [ deleteItem ] = deleteMutation();
     const [ postponeItem ] = postponeMutation ? postponeMutation() : [];
     const [ loadingId, setLoadingId ] = useState();
@@ -30,6 +30,7 @@ export default function TableActions({ itemId, itemType = null, editPath, return
             /> 
             
             <EditBtn
+                hide={hideEditBtn}
                 path={editPath}
                 returnPath={returnPath}
             />    

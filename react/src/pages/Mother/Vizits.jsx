@@ -2,6 +2,7 @@ import { useGetMotherVizitsQuery, useDeleteMotherVizitMutation } from "@api/moth
 import Header from "@components/Header";
 import Loading from "@components/Loading";
 import TableItemDate from "@components/table/TableItemDate";
+import TableActions from "@components/table/TableActions";
 
 function formateDate(laravelDate) {
     const date = new Date(laravelDate);
@@ -39,7 +40,16 @@ export default function Vizits() {
 
                                     <p className="table-row__title"      >
                                         {vizit.description}
-                                    </p>   
+                                    </p>  
+
+                                    <TableActions
+                                        hideEditBtn={true}
+                                        itemId={vizit.id}
+                                        deleteMutation={useDeleteMotherVizitMutation}
+                                        editPath="/"
+                                        returnPath={`/mother-vizits`}
+                                        template="table"          
+                                    />
                                 </li>                            
                             ))}
                         </ul>

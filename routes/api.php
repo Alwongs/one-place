@@ -45,7 +45,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::delete('/schedule-delete-month/{year}/{month}', [ScheduleController::class, 'deleteMonth']);
 
     Route::get('/mother-vizits', [MotherController::class, 'getMotherVizits']);
-    Route::delete('/mother-vizit-delete', [MotherController::class, 'deleteMotherVizit']);
+    Route::delete('/mother-vizit-delete/{id}', [MotherController::class, 'deleteMotherVizit']);
 
     Route::apiResources([
         'users' => UserController::class,
