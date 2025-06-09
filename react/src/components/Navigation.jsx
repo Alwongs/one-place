@@ -10,6 +10,7 @@ export default function Navigation({ onClick, isRoot }) {
         { title: "Tools", path: "/tools", show: true },
         { title: "Schedule", path: "/schedule", show: true },
         { title: "Mother", path: "/mother-schedule", show: isRoot },
+        { title: "Mother-vizits", path: "/mother-vizits", show: isRoot },
     ]
 
     return (

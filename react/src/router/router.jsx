@@ -6,7 +6,7 @@ import  {
     Tasks, Task, AddTask, EditTask,
     Tools, AddTool, EditTool, Tool,
     Schedule, AddDays, EditDay, ShowYear, ShowMonth, ShowDay,
-    MotherSchedule, MotherShowYear, MotherShowMonth, MotherShowDay,
+    MotherSchedule, MotherShowYear, MotherShowMonth, MotherShowDay, MotherVizits,
     Dashboard
 }  from "@router";
 
@@ -49,6 +49,7 @@ export default  createBrowserRouter([
             { path: "/mother-schedule/:year", element: <MotherShowYear /> },
             { path: "/mother-schedule/:year/:month", element: <MotherShowMonth /> },
             { path: "/mother-schedule/:year/:month/:day/:id", element: <MotherShowDay /> },
+            { path: "/mother-vizits", element: <MotherVizits /> },
         ]
     }, 
     {

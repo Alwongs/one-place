@@ -44,6 +44,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::put('/schedule-update-day/{id}', [ScheduleController::class, 'updateDay']);
     Route::delete('/schedule-delete-month/{year}/{month}', [ScheduleController::class, 'deleteMonth']);
 
+    Route::get('/mother-vizits', [MotherController::class, 'getMotherVizits']);
+    Route::delete('/mother-vizit-delete', [MotherController::class, 'deleteMotherVizit']);
+
     Route::apiResources([
         'users' => UserController::class,
         'events' => EventController::class,
@@ -55,22 +58,6 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
-Route::get('/cats', function (Request $request) {
-    return [
-        [
-            'id' => 1,
-            'title' => 'red'
-        ],
-        [
-            'id' => 2,
-            'title' => 'black'
-        ],
-        [
-            'id' => 3,
-            'title' => 'white'
-        ],
-    ];
-});
 
 Route::get('/log', [LogController::class, 'index']);
 

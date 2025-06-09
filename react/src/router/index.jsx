@@ -37,5 +37,6 @@ export { default as MotherSchedule }  from "@pages/Mother/Schedule";
 export { default as MotherShowYear }  from "@pages/Mother/ShowYear";
 export { default as MotherShowMonth }  from "@pages/Mother/ShowMonth";
 export { default as MotherShowDay }  from "@pages/Mother/ShowDay";
+export { default as MotherVizits }  from "@pages/Mother/Vizits";
 
 export { default as Dashboard } from "@pages/Dashboard/Dashboard";
