@@ -65,9 +65,6 @@ class MotherController extends Controller
     {
         $agent = new Agent();
         $device = $agent->device() ?? '';
-        if ($agent->isMobile()) {
-            $device = 'Mobile App is used';
-        }
         $platform = $agent->platform() ?? '';
         $parts = array_filter([$device, $platform]);
         return implode(' and ', $parts);
