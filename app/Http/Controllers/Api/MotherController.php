@@ -91,4 +91,9 @@ class MotherController extends Controller
 
         return response()->json(['message' => 'MotherVizit removed']);
     }
+
+    public function deleteAllMotherVisits()
+    {
+        MotherVizit::truncate();
+    }
 }

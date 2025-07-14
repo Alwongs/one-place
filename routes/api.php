@@ -46,6 +46,8 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('/mother-vizits', [MotherController::class, 'getMotherVizits']);
     Route::delete('/mother-vizit-delete/{id}', [MotherController::class, 'deleteMotherVizit']);
+    Route::delete('/mother-vizits-delete', [MotherController::class, 'deleteAllMotherVisits']);
+    
 
     Route::apiResources([
         'users' => UserController::class,

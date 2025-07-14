@@ -1,4 +1,4 @@
-import { useGetMotherVizitsQuery, useDeleteMotherVizitMutation } from "@api/motherVizitsApi";
+import { useGetMotherVizitsQuery, useDeleteMotherVizitMutation, useDeleteMotherAllVizitsMutation } from "@api/motherVizitsApi";
 import Header from "@components/Header";
 import Loading from "@components/Loading";
 import TableItemDate from "@components/table/TableItemDate";
@@ -17,6 +17,12 @@ function formateDate(laravelDate) {
 
 export default function Vizits() {
     const { data = [], isLoading, error } = useGetMotherVizitsQuery();
+    const [ deleteAll, { isLoading: isTruncating } ] = useDeleteMotherAllVizitsMutation();
+
+    const cleanVisitsHandler = async () => {
+        await deleteAll();
+        console.log('here')
+    }
 
     return (
         <div className="container">
@@ -28,6 +34,11 @@ export default function Vizits() {
                     <div className="section__col col-6">
 
                         <Loading isLoading={isLoading} />
+                        <Loading isLoading={isTruncating} />
+
+                        <div className="btn-block flex-end">
+                            <button className="btn btn-red" onClick={cleanVisitsHandler}>Clean</button>
+                        </div>
 
                         <ul>
                             {data.vizits?.map((vizit) => (

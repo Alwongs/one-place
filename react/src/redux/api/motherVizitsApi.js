@@ -21,9 +21,16 @@ export const motherVizitsApi = createApi({
                 method: "DELETE",
             }),
             invalidatesTags: [{type: "MotherVizits", id: "LIST"}]
-        })          
+        }),
+        deleteMotherAllVizits: build.mutation({
+            query: () => ({
+                url: `mother-vizits-delete`,
+                method: "DELETE",
+            }),
+            invalidatesTags: [{type: "MotherVizits", id: "LIST"}]
+        }),     
     }),
 
 });
 
-export const { useGetMotherVizitsQuery, useDeleteMotherVizitMutation } = motherVizitsApi;
+export const { useGetMotherVizitsQuery, useDeleteMotherVizitMutation, useDeleteMotherAllVizitsMutation } = motherVizitsApi;
