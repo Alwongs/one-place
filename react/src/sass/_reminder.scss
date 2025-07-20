@@ -16,13 +16,13 @@
     min-height: 140px;
     &.overdue {
         min-height: fit-content;  
-        padding: 5px 5px 10px;
+        padding: 10px 10px 10px;
     }
     &__title {
         text-align: center;
         text-transform: capitalize;
-        font-size: 20px;
-        margin-bottom: 10px;
+        font-size: 16px;
+        margin-bottom: 14px;
         &.overdue {
             font-size: 16px;  
         }        
@@ -40,7 +40,7 @@
     align-items: flex-end;
     gap: 20px;
     &.overdue {
-        height: 20px;
+        // height: 20px;
     }
     &__date {
         @media (max-width: var.$mobile-max) {  
@@ -50,21 +50,22 @@
     &__title {
         flex: 1 0 200px;
         color: var.$base-text;
-        font-size: 20px;
-        font-weight: 600;
+        font-size: 18px;
+        font-weight: 500;
         font-style: italic;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis; 
         width: 21ch;  
-        &.overdue, &.today {
+        &.overdue {
             color: red;
         }  
         &.overdue {
             font-size: 16px;
         }
         &.today {
-            font-size: 18px;
+            font-size: 20px;
+            color: rgb(0, 145, 53);
         } 
         @media (min-width: var.$desktop-min) and (max-width: var.$desktop-max) {    
             max-width: 100%;                                      
