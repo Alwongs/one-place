@@ -2,8 +2,8 @@ export const buildStilesForEventCard = (title, events) => {
 
     const red = 'rgb(255, 0, 0)';
     const green = 'rgba(0, 134, 54, 1)';
-    const blue = 'rgba(2, 0, 139, 1)';
-    const greyBlue = 'rgba(44, 43, 87, 1)';
+    const blue = 'rgba(3, 0, 177, 1)';
+    const greyBlue = 'rgba(41, 38, 136, 1)';
 
     let styles = {};
     switch (title) {
@@ -12,11 +12,11 @@ export const buildStilesForEventCard = (title, events) => {
             break;
 
         case "today":
-            styles = events?.length === 0 ? { border: `2px solid ${green}` } : { border: `4px solid ${green}`, padding: '20px 10px', boxSizing: 'content-box' }
+            styles = events?.length === 0 ? { border: `3px solid ${green}` } : { border: `4px solid ${green}`, padding: '20px 10px', boxSizing: 'content-box' }
             break;
 
         case "tomorrow":
-            styles = events?.length === 0 ? { border: `2px solid ${blue}` } : { border: `3px solid ${blue}` }
+            styles = events?.length === 0 ? { border: `1px solid ${blue}` } : { border: `3px solid ${blue}` }
             break;    
             
         default:

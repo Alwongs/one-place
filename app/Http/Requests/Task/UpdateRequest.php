@@ -38,6 +38,7 @@ class UpdateRequest extends FormRequest
             'description' => ['nullable', 'string'],
             'position' => ['required'],
             'status' => ['required'],
+            'important_status' => ['required']
         ];
     }
     public function messages()

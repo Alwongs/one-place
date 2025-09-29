@@ -37,6 +37,7 @@ class StoreRequest extends FormRequest
             'description' => ['nullable', 'string'],
             'position' => ['required'],
             'status' => ['required'],
+            'important_status' => ['required']
         ];
     }
 

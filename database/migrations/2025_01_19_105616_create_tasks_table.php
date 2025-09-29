@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('description')->nullable();   
             $table->integer('rate')->default(5);  
             $table->integer('position')->default(0);
+            $table->char('important_status')->default('A');  // A, B, C, D 
             $table->char('status')->default('A');           
             $table->timestamps();
         });
