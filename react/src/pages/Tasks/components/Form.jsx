@@ -39,6 +39,14 @@ export default function Form({ onSubmit, onChange, formData }) {
                 onChange={onChange}
             />            
 
+            <InputField
+                id="taskImportantFormStatus"
+                label="Important Status"
+                name="important_status"
+                value={formData.important_status}
+                onChange={onChange}
+            />   
+
             <TextareaField
                 id="taskFormDecription"
                 label="Description"
