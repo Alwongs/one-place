@@ -1,6 +1,8 @@
 import InputField from "@components/form/InputField";
+import SelectField from "@components/form/SelectField";
 import TextareaField from "@components/form/TextareaField";
 import SubmitBtnBlock from "./SubmitBtnBlock";
+import { IMPORTANT_STATUSES_OPTIONS } from "@functions/selectOptions";
 
 export default function Form({ onSubmit, onChange, formData }) {
 
@@ -37,15 +39,17 @@ export default function Form({ onSubmit, onChange, formData }) {
                 name="status"
                 value={formData.status}
                 onChange={onChange}
-            />            
+            />             
 
-            <InputField
-                id="taskImportantFormStatus"
-                label="Important Status"
+            <SelectField
+                classes="form__element"
+                id="taskFormImportantStatus"
+                label="Important status"
                 name="important_status"
                 value={formData.important_status}
                 onChange={onChange}
-            />   
+                options={IMPORTANT_STATUSES_OPTIONS}
+            />            
 
             <TextareaField
                 id="taskFormDecription"

@@ -28,6 +28,14 @@ export const EVENT_TYPES = [
     { code: "M", title: "Monthly" },
     { code: "A", title: "Annual" },
 ];
+
+export const IMPORTANT_STATUSES = [
+    { code: "A", title: "IMPORTANT ,,,, URGENT" },
+    { code: "B", title: "IMPORTANT ,,,, not urgent" },
+    { code: "C", title: "not important ,,,, URGENT" },
+    { code: "D", title: "not important ,,,, not urgent" },
+];
+
 export const DAY = 'D';
 export const NIGHT = 'N';
 export const DAY_OFF = 'O';
