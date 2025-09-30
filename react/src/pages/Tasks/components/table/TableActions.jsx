@@ -1,0 +1,41 @@
+import { useState } from "react";
+import EditBtn from "./btn/EditBtn";
+import DeleteBtn from "./btn/DeleteBtn";
+import PostponeBtn from "./btn/PostponeBtn";
+
+export default function TableActions({ itemId, itemType = null, editPath, returnPath, deleteMutation, postponeMutation = null, template, hideEditBtn = false }) {
+    const [ deleteItem ] = deleteMutation();
+    const [ postponeItem ] = postponeMutation ? postponeMutation() : [];
+    const [ loadingId, setLoadingId ] = useState();
+
+    const handleDelete = async () => {
+        setLoadingId(itemId);
+        await deleteItem(itemId);
+    }
+
+    const handlePostpone = async () => {
+        setLoadingId(itemId);
+        await postponeItem(itemId);
+    }    
+
+    return (
+        <div className={`square-item__actions`}>
+            {loadingId === itemId && <span>loading...</span>}
+
+            <PostponeBtn
+                visible={postponeMutation}
+                id={itemId}
+                type={itemType}
+                onClick={handlePostpone}
+            /> 
+            
+            <EditBtn
+                hide={hideEditBtn}
+                path={editPath}
+                returnPath={returnPath}
+            />    
+
+            <DeleteBtn onClick={handleDelete} />
+        </div>      
+    )
+}

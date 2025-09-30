@@ -1,0 +1,114 @@
+@use "variables" as var;
+
+.main-square-container {
+    box-shadow: 0 0 7px 2px rgba(125, 89, 89, 0.3);
+    width: 650px;
+    height: 650px;
+    margin: 0 auto;
+    // border: 3px solid red;
+    flex-wrap: wrap;
+    display: flex;  
+    @media (min-width: var.$tablet-min) and (max-width: var.$tablet-max) {  
+        width: 550px;
+        height: 550px;        
+    }           
+    @media (max-width: var.$mobile-max) {  
+        width: 100%;
+        height: fit-content;  
+        flex-direction: column;       
+    }  
+}
+
+.square {
+    position: relative;
+    width: 50%;
+    height: 50%;
+    padding: 40px 20px 10px;
+    @media (min-width: var.$tablet-min) and (max-width: var.$tablet-max) {  
+    padding: 10px;       
+    }     
+    @media (max-width: var.$mobile-max) {  
+        width: 100%;     
+    }      
+}
+.square-description {
+    background-color: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 24px;
+    margin-bottom: 15px;
+    color: #ff3001;
+    text-align: center;
+    line-height: 24px;
+}
+
+.square-a {
+    background-color: rgb(250, 131, 101);    
+}
+.square-b {
+    background-color: rgb(86, 163, 208);
+}
+.square-c {
+    background-color: rgb(120, 200, 106);       
+}
+.square-d {
+    background-color: rgb(240, 205, 117);       
+}
+
+.square-item {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgb(211, 211, 211);
+    box-shadow: 1px 1px 2px 1px rgba(90, 90, 90, 0.1);
+    height: 34px;
+    margin-bottom: 10px;
+    padding: 0 5px 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    &__date {
+        @media (max-width: var.$mobile-max) {  
+            &.hide { display: none; }            
+        }          
+    }    
+    &__title {
+        // border: 3px solid red;
+        flex: 1 0 200px;
+        color: rgb(0, 52, 125);
+        font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+        width: 21ch;
+        &::first-letter {
+            text-transform: capitalize;
+        }
+        @media (min-width: var.$desktop-min) and (max-width: var.$desktop-max) {    
+            max-width: 100%;                                      
+        }     
+        @media (min-width: var.$tablet-min) and (max-width: var.$tablet-max) {  
+            flex: 1 0 180px;
+            width: 17ch; 
+        }         
+        @media (max-width: var.$mobile-max) {  
+            width: 17ch;             
+            max-width: 100%;             
+            flex: 1 0 185px;   
+            font-size: 22px;            
+        }           
+    }
+    &__qty {
+        @media (max-width: var.$mobile-max) {    
+            font-size: 22px;            
+        }          
+    }
+    &__actions {
+        display: flex;
+        align-items: center;
+
+    }     
+    @media (max-width: var.$mobile-max) {  
+        height: 44px;              
+    }     
+}

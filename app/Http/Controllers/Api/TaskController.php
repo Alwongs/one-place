@@ -8,13 +8,22 @@ use App\Http\Requests\Task\UpdateRequest;
 use App\Models\Task;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\TaskResource;
+use App\Helpers\TaskHelper;
 
 class TaskController extends Controller
 {
     public function index()
     {
         $tasks = Task::where('user_id', Auth::id())->orderBy('rate', 'DESC')->orderBy('position', 'ASC')->get();
-        return response()->json(['tasks' => $tasks]);
+
+        list($a, $b, $c, $d) = TaskHelper::chunkTasksByImportantStatus($tasks);
+
+        return response()->json([
+            'a' => $a,
+            'b' => $b,
+            'c' => $c,
+            'd' => $d,
+        ]);
     }
 
     public function store(StoreRequest $request)
