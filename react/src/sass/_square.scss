@@ -23,7 +23,6 @@
     position: relative;
     width: 50%;
     height: 50%;
-    padding: 40px 20px 10px;
     @media (min-width: var.$tablet-min) and (max-width: var.$tablet-max) {  
     padding: 10px;       
     }     
@@ -42,6 +41,12 @@
     color: #ff3001;
     text-align: center;
     line-height: 24px;
+}
+.square-list {
+    height: 100%;
+    padding: 40px 20px 10px;
+    // border: 3px solid green;
+    overflow-y: auto;
 }
 
 .square-a {
