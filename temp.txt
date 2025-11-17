@@ -1,0 +1,3 @@
+    const ozonPiceHistory = JSON.parse(item.ozon_price_history);
+    const wbPiceHistory = JSON.parse(item.wb_price_history);
+    const yaPiceHistory = JSON.parse(item.ya_price_history);

@@ -25,6 +25,11 @@ export { default as Tool }  from "@pages/Tools/Tool";
 export { default as AddTool }  from "@pages/Tools/AddTool";
 export { default as EditTool }  from "@pages/Tools/EditTool";
 
+export { default as Products }  from "@pages/Products/Products";
+export { default as Product }  from "@pages/Products/Product";
+export { default as AddProduct }  from "@pages/Products/AddProduct";
+export { default as EditProduct }  from "@pages/Products/EditProduct";
+
 
 export { default as Schedule }  from "@pages/Schedule/Schedule";
 export { default as AddDays }  from "@pages/Schedule/AddDays";

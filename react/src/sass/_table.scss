@@ -39,6 +39,12 @@
             font-size: 22px;            
         }           
     }
+    &__image {
+        height: 100%;
+        img {
+            height: 100%
+        }
+    }
     &__qty {
         @media (max-width: var.$mobile-max) {    
             font-size: 22px;            

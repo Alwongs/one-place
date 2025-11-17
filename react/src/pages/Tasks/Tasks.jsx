@@ -9,7 +9,7 @@ export default function Tasks() {
     
     return (
         <div className="container">
-            <Header title="Tasks" />
+            {/* <Header title="Tasks" /> */}
             <main className="main">
                 <div className="section">
                     <div className="section__col col-auto">

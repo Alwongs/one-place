@@ -6,6 +6,7 @@ import { usersApi } from "@api/usersApi";
 import { eventsApi } from "@api/eventsApi";
 import { tasksApi } from "@api/tasksApi";
 import { toolsApi } from "@api/toolsApi";
+import { productsApi } from "@api/productsApi";
 import { scheduleDaysApi } from "@api/scheduleDaysApi";
 import { motherScheduleDaysApi } from "@api/motherScheduleDaysApi";
 import { motherVizitsApi } from "@api/motherVizitsApi";
@@ -18,6 +19,7 @@ const store = configureStore({
         [eventsApi.reducerPath]: eventsApi.reducer,
         [tasksApi.reducerPath]: tasksApi.reducer,
         [toolsApi.reducerPath]: toolsApi.reducer,
+        [productsApi.reducerPath]: productsApi.reducer,
         [scheduleDaysApi.reducerPath]: scheduleDaysApi.reducer,
         [motherScheduleDaysApi.reducerPath]: motherScheduleDaysApi.reducer,
         [motherVizitsApi.reducerPath]: motherVizitsApi.reducer,
@@ -29,6 +31,7 @@ const store = configureStore({
             .concat(eventsApi.middleware)
             .concat(tasksApi.middleware)
             .concat(toolsApi.middleware)
+            .concat(productsApi.middleware)
             .concat(scheduleDaysApi.middleware)
             .concat(motherScheduleDaysApi.middleware)
             .concat(motherVizitsApi.middleware)

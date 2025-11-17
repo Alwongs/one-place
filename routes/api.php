@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\TaskController;
 use App\Http\Controllers\Api\ToolController;
 use App\Http\Controllers\Api\EventController;
+use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\ScheduleDayController;
 use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\ScheduleController;
@@ -54,12 +55,14 @@ Route::middleware('auth:sanctum')->group(function () {
         'events' => EventController::class,
         'tasks'  => TaskController::class,
         'tools' => ToolController::class,
+        'products' => ProductController::class,
     ]);
 });
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
+// Route::get('products', [ProductController::class, 'index']);
 
 Route::get('/log', [LogController::class, 'index']);
 

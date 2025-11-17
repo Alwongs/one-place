@@ -30,10 +30,10 @@ export const EVENT_TYPES = [
 ];
 
 export const IMPORTANT_STATUSES = [
-    { code: "A", title: "IMPORTANT ,,,, URGENT" },
-    { code: "B", title: "IMPORTANT ,,,, not urgent" },
-    { code: "C", title: "not important ,,,, URGENT" },
-    { code: "D", title: "not important ,,,, not urgent" },
+    { code: "A", title: "ВАЖНО и СРОЧНО" },
+    { code: "B", title: "ВАЖНО и не срочно" },
+    { code: "C", title: "не важно и СРОЧНО" },
+    { code: "D", title: "не важно и не срочно" },
 ];
 
 export const DAY = 'D';

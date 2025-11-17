@@ -50,7 +50,9 @@ ul     {list-style-type: none;}
     }
     &__content {
         background-color: var.$content-bg;
-        flex: 1 1 auto;        
+        flex: 1 1 auto;    
+        max-width: 100%;   
+        overflow: hidden; 
     }
 }
 .guest-layout {
@@ -103,7 +105,7 @@ ul     {list-style-type: none;}
 .section {
     display: flex;
     justify-content: space-around;
-    padding: 0 10px;
+    padding: 5px 10px;
     &__col {
         &.col-3  { flex: 0 1 300px; }
         &.col-4  { flex: 0 1 400px; }

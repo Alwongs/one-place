@@ -1,8 +1,6 @@
 import InputField from "@components/form/InputField";
-import SelectField from "@components/form/SelectField";
 import TextareaField from "@components/form/TextareaField";
 import SubmitBtnBlock from "./SubmitBtnBlock";
-import { IMPORTANT_STATUSES_OPTIONS } from "@functions/selectOptions";
 
 export default function Form({ onSubmit, onChange, formData }) {
 
@@ -16,6 +14,46 @@ export default function Form({ onSubmit, onChange, formData }) {
                 value={formData.title}
                 onChange={onChange}
             />
+
+            <InputField
+                id="taskFormImageUrl"
+                label="Image url"
+                name="image_url"
+                value={formData.image_url}
+                onChange={onChange}
+            />      
+
+            <InputField
+                id="taskFormProductUrl"
+                label="Product url"
+                name="product_url"
+                value={formData.product_url}
+                onChange={onChange}
+            />  
+
+            <InputField
+                id="taskFormPriceHistory"
+                label="Ozon rice history"
+                name="ozon_price_history"
+                value={formData.ozon_price_history}
+                onChange={onChange}
+            />    
+
+            <InputField
+                id="taskFormPriceHistory"
+                label="Wildberries price history"
+                name="wb_price_history"
+                value={formData.wb_price_history}
+                onChange={onChange}
+            />  
+
+            <InputField
+                id="taskFormPriceHistory"
+                label="Yandex price history"
+                name="ya_price_history"
+                value={formData.ya_price_history}
+                onChange={onChange}
+            />                                                     
 
             <InputField
                 id="taskFormRate"
@@ -39,16 +77,6 @@ export default function Form({ onSubmit, onChange, formData }) {
                 name="status"
                 value={formData.status}
                 onChange={onChange}
-            />             
-
-            <SelectField
-                classes={`form__element square-${formData.important_status.toLowerCase()}`}
-                id="taskFormImportantStatus"
-                label="Important status"
-                name="important_status"
-                value={formData.important_status}
-                onChange={onChange}
-                options={IMPORTANT_STATUSES_OPTIONS}
             />            
 
             <TextareaField

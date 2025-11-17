@@ -8,6 +8,7 @@ export default function Navigation({ onClick, isRoot }) {
         { title: "Events", path: "/events", show: true },
         { title: "Tasks", path: "/tasks", show: true },
         { title: "Tools", path: "/tools", show: true },
+        { title: "Products", path: "/products", show: true },
         { title: "Schedule", path: "/schedule", show: true },
         { title: "Mother", path: "/mother-schedule", show: isRoot },
         { title: "Mother-vizits", path: "/mother-vizits", show: isRoot },
