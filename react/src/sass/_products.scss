@@ -1,0 +1,39 @@
+.products-header {
+    &__actions {
+        // border: 3px solid red;
+        // padding: 3px;
+        display: flex;
+        gap: 4px
+    }
+    &__actions-btn {
+        width: 70px;
+        height: 30px;
+        color: #eee;
+        font-size: 14px;
+        transition: 0.2s;
+        &.selected {
+            outline: 4px solid #02fdfdff;
+        }
+    }
+}
+
+.bg-ozon {
+    background-color: rgb(54, 116, 232);  
+}
+.bg-wb {
+    background-color: #a145e7;  
+}
+.bg-ya {
+    background-color: rgb(243, 138, 34);
+}
+
+.text-ozon {
+    color: rgb(58, 127, 255); 
+}
+.text-wb {
+    color: #bf6cff;   
+}
+.text-ya {
+    color: rgb(255, 152, 50);
+}
+

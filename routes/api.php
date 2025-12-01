@@ -12,6 +12,7 @@ use App\Http\Controllers\Api\ScheduleDayController;
 use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\ScheduleController;
 use App\Http\Controllers\Api\MotherController;
+use App\Http\Controllers\Api\IdeaController;
 
 use App\Http\Controllers\Api\LogController;
 
@@ -56,13 +57,12 @@ Route::middleware('auth:sanctum')->group(function () {
         'tasks'  => TaskController::class,
         'tools' => ToolController::class,
         'products' => ProductController::class,
+        'ideas' => IdeaController::class,
     ]);
 });
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
-
-// Route::get('products', [ProductController::class, 'index']);
 
 Route::get('/log', [LogController::class, 'index']);
 
@@ -76,3 +76,7 @@ Route::get('/mother-schedule-day/{id}', [MotherController::class, 'getYearMonthD
 Route::get('/debug-test', function() {
     return '<h1>Debug is OK</h1>';
 });
+
+// Route::apiResources([
+//     'ideas' => IdeaController::class,
+// ]);

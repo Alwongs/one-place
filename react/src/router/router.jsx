@@ -5,6 +5,7 @@ import  {
     Events, Event, AddEvent, EditEvent,
     Tasks, Task, AddTask, EditTask,
     Tools, Tool, AddTool, EditTool,
+    Ideas, Idea, AddIdea, EditIdea,
     Products, Product, AddProduct, EditProduct,
     Schedule, AddDays, EditDay, ShowYear, ShowMonth, ShowDay,
     MotherSchedule, MotherShowYear, MotherShowMonth, MotherShowDay, MotherVizits,
@@ -37,7 +38,12 @@ export default  createBrowserRouter([
             { path: "tools", element: <Tools /> },
             { path: "tools/:id", element: <Tool /> },
             { path: "tools/create", element: <AddTool /> },
-            { path: "tools/edit/:id", element: <EditTool /> },   
+            { path: "tools/edit/:id", element: <EditTool /> },  
+            
+            { path: "ideas", element: <Ideas /> },    
+            { path: "ideas/create", element: <AddIdea /> },     
+            { path: "ideas/:id", element: <Idea /> },   
+            { path: "ideas/edit/:id", element: <EditIdea /> }, 
 
             { path: "products", element: <Products /> },  
             { path: "products/:id", element: <Product /> }, 

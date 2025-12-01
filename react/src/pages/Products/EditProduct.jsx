@@ -11,7 +11,18 @@ export default function EditProduct() {
     const { id } = useParams();
     const { data: product, error, isLoading } = useGetProductQuery(id);
     const [updateTool, { isSuccess, isError }] = useUpdateProductMutation();
-    const [formData, setFormData] = useState({ title: "", description: "", qty: "", rate: "", position: "", status: "" });
+    const [formData, setFormData] = useState({
+        title: "",
+        image_url: "",
+        product_url: "",
+        ozon_price_history: "",
+        wb_price_history: "",
+        ya_price_history: "",                
+        rate: "5",
+        position: "0",
+        status: "A",
+        description: ""
+    });
   
     useEffect(() => {
         if (product) {

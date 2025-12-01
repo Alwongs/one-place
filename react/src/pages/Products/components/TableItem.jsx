@@ -4,7 +4,7 @@ import TableDate from "@components/table/TableItemDate";
 import { FaExternalLinkAlt  } from 'react-icons/fa'; 
 import PriceHistory from "./PriceHistory";
 
-export default function TableItem({ item, object, deleteMutation }) {  
+export default function TableItem({ item, object, deleteMutation, shopActive }) {  
 
     const ozonPiceHistory = JSON.parse(item.ozon_price_history);
     const wbPiceHistory = JSON.parse(item.wb_price_history);
@@ -23,9 +23,9 @@ export default function TableItem({ item, object, deleteMutation }) {
                     path={`/${object}/${item.id}`}
                 />
                 <div className="products-table-row__price-history-block">
-                    <PriceHistory data={ozonPiceHistory} shop="ozon" />
-                    <PriceHistory data={wbPiceHistory} shop="wb" />
-                    <PriceHistory data={yaPiceHistory} shop="ya" />
+                    <PriceHistory data={ozonPiceHistory} shop="ozon" hide={shopActive !== 'ozon'} />
+                    <PriceHistory data={wbPiceHistory} shop="wb" hide={shopActive !== 'wb'}/>
+                    <PriceHistory data={yaPiceHistory} shop="ya" hide={shopActive !== 'ya'} />
                 </div>
             </div>                       
 

@@ -31,7 +31,7 @@ export default function Form({ onSubmit, onChange, formData }) {
                 onChange={onChange}
             />  
 
-            <InputField
+            <TextareaField
                 id="taskFormPriceHistory"
                 label="Ozon rice history"
                 name="ozon_price_history"
@@ -39,7 +39,7 @@ export default function Form({ onSubmit, onChange, formData }) {
                 onChange={onChange}
             />    
 
-            <InputField
+            <TextareaField
                 id="taskFormPriceHistory"
                 label="Wildberries price history"
                 name="wb_price_history"
@@ -47,7 +47,7 @@ export default function Form({ onSubmit, onChange, formData }) {
                 onChange={onChange}
             />  
 
-            <InputField
+            <TextareaField
                 id="taskFormPriceHistory"
                 label="Yandex price history"
                 name="ya_price_history"
