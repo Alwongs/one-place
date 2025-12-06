@@ -46,7 +46,11 @@
             font-size: 22px;            
         }                
     } 
-
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
     &__title {
         // border: 1px solid blue;
         font-size: 13px;

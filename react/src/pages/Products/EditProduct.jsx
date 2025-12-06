@@ -17,7 +17,8 @@ export default function EditProduct() {
         product_url: "",
         ozon_price_history: "",
         wb_price_history: "",
-        ya_price_history: "",                
+        ya_price_history: "",     
+        dns_price_history: "",              
         rate: "5",
         position: "0",
         status: "A",
@@ -29,11 +30,13 @@ export default function EditProduct() {
             const ozonPricesString = mfJsonToString(product.ozon_price_history)
             const wbPricesString = mfJsonToString(product.wb_price_history)
             const yaPricesString = mfJsonToString(product.ya_price_history)
+            const dnsPricesString = mfJsonToString(product.dns_price_history)
             const formProduct = {
                 ...product,
                 ozon_price_history: ozonPricesString,
                 wb_price_history: wbPricesString,
                 ya_price_history: yaPricesString,
+                dns_price_history: dnsPricesString,
             }
             setFormData(formProduct);
         }
@@ -63,7 +66,8 @@ export default function EditProduct() {
         e.preventDefault();
         formData.ozon_price_history = mfStringListToJson(formData.ozon_price_history);    
         formData.wb_price_history = mfStringListToJson(formData.wb_price_history);  
-        formData.ya_price_history = mfStringListToJson(formData.ya_price_history);         
+        formData.ya_price_history = mfStringListToJson(formData.ya_price_history);      
+        formData.dns_price_history = mfStringListToJson(formData.dns_price_history);       
 
         await updateTool({ id, ...formData });
         navigate(previousUrl);

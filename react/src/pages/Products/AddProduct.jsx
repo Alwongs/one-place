@@ -16,7 +16,8 @@ export default function AddProduct() {
         product_url: "",
         ozon_price_history: "",
         wb_price_history: "",
-        ya_price_history: "",                
+        ya_price_history: "",   
+        dns_price_history: "",               
         rate: "5",
         position: "0",
         status: "A",
@@ -35,7 +36,8 @@ export default function AddProduct() {
         e.preventDefault();
         formData.ozon_price_history = mfStringListToJson(formData.ozon_price_history);    
         formData.wb_price_history = mfStringListToJson(formData.wb_price_history);  
-        formData.ya_price_history = mfStringListToJson(formData.ya_price_history);      
+        formData.ya_price_history = mfStringListToJson(formData.ya_price_history);   
+        formData.dns_price_history = mfStringListToJson(formData.dns_price_history);     
         await createItem(formData);
         navigate(previousPath);
     };

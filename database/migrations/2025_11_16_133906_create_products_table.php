@@ -20,6 +20,7 @@ return new class extends Migration
             $table->json('ozon_price_history')->nullable();  
             $table->json('wb_price_history')->nullable(); 
             $table->json('ya_price_history')->nullable();      
+            $table->json('dns_price_history')->nullable();   
             $table->text('description')->nullable();   
             $table->integer('rate')->default(5);  
             $table->integer('position')->default(0);

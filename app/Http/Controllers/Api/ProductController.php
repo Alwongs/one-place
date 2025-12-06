@@ -15,9 +15,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return response()->json(['products' => Product::all()]); 
-
-        // return response()->json(['products' => Product::where('user_id', Auth::id())->get()]);        
+        return response()->json([
+            'products' => Product::where('user_id', Auth::id())->orderBy('created_at', 'DESC')->get()
+        ]);  
     }
 
     /**

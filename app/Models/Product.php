@@ -17,6 +17,7 @@ class Product extends Model
         'ozon_price_history',
         'wb_price_history',
         'ya_price_history',
+        'dns_price_history',
         'rate',
         'user_id',
         'position',

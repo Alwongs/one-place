@@ -39,6 +39,7 @@ class StoreRequest extends FormRequest
             'ozon_price_history' => ['nullable', 'json'],
             'wb_price_history' => ['nullable', 'json'],
             'ya_price_history' => ['nullable', 'json'],
+            'dns_price_history' => ['nullable', 'json'],
             'description' => ['nullable', 'string'],
             'position' => ['required'],
             'status' => ['required'],

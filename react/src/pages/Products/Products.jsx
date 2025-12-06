@@ -19,7 +19,7 @@ export default function Tools() {
             <main className="main" >
                 <div className="section">
                     <div className="section__col col-auto" >
-                        <AddBtnBlock onSelectShop={selectShopHandle} />
+                        <AddBtnBlock />
                         <Loading isLoading={isLoading} />
                         <ul>
                             {data.products?.map((product) => (
