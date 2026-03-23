@@ -59,9 +59,11 @@
         width: 21ch;  
         &.overdue {
             color: red;
+            animation: blinkText 1s linear infinite;
         }  
         &.overdue {
             font-size: 16px;
+            opacity: 0;
         }
         &.today {
             font-size: 20px;
@@ -83,4 +85,10 @@
         display: flex;
         align-items: center;
     }
+}
+
+@keyframes blinkText {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
 }

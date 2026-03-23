@@ -13,7 +13,7 @@ use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\ScheduleController;
 use App\Http\Controllers\Api\MotherController;
 use App\Http\Controllers\Api\IdeaController;
-
+use App\Http\Controllers\Api\MessageController;
 use App\Http\Controllers\Api\LogController;
 
 /*
@@ -26,6 +26,11 @@ use App\Http\Controllers\Api\LogController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
+
+
+Route::get('/messages', [MessageController::class, 'index']);
+Route::post('/messages', [MessageController::class, 'store']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', function (Request $request) {
