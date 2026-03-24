@@ -10,9 +10,8 @@ class MessageController extends Controller
 {
     // Получить все сообщения (сортировка по дате)
     public function index()
-    {
-        $messages = Message::with('user')->orderBy('created_at', 'asc')->get();
-        return response()->json($messages);
+    {      
+        return response()->json(['messages' => Message::with('user')->orderBy('created_at', 'asc')->get()]);
     }
 
     // Отправить новое сообщение
