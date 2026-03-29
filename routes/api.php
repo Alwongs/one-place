@@ -32,9 +32,7 @@ Route::get('/', function() {
 });
 
 // put in auth middleware
-Route::get('/messages', [MessageController::class, 'index']);
-Route::post('/messages', [MessageController::class, 'store']);
-Route::delete('/messages/delete/{id}', [MessageController::class, 'deleteMessage']);
+
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', function (Request $request) {
@@ -58,6 +56,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/mother-vizits', [MotherController::class, 'getMotherVizits']);
     Route::delete('/mother-vizit-delete/{id}', [MotherController::class, 'deleteMotherVizit']);
     Route::delete('/mother-vizits-delete', [MotherController::class, 'deleteAllMotherVisits']);
+
+    Route::get('/messages', [MessageController::class, 'index']);
+    Route::post('/messages', [MessageController::class, 'store']);
+    Route::delete('/messages/delete/{id}', [MessageController::class, 'deleteMessage']);
     
 
     Route::apiResources([
