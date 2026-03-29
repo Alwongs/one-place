@@ -34,26 +34,27 @@ class MessageController extends Controller
 
     public function deleteMessage($id)
     {
-        $message = Message::find($id);
-        if (!$message) {
-            return response()->json(['message' => 'Message not found'], Response::HTTP_NOT_FOUND); // 404
-        }
+        return auth()->id;
+        // $message = Message::find($id);
+        // if (!$message) {
+        //     return response()->json(['message' => 'Message not found'], Response::HTTP_NOT_FOUND); // 404
+        // }
 
-        if ($message->user_id !== auth()->id()) {
-            return response()->json(['message' => 'You are not authorized to delete this message'], Response::HTTP_FORBIDDEN); // 403
-        }
+        // if ($message->user_id !== auth()->id()) {
+        //     return response()->json(['message' => 'You are not authorized to delete this message'], Response::HTTP_FORBIDDEN); // 403
+        // }
 
-        try {
-            if ($message->delete()) {
-                return response()->json(['message' => 'Message deleted successfully'], Response::HTTP_OK); // 200
-            } else {
-                return response()->json(['message' => 'Failed to delete message'], Response::HTTP_INTERNAL_SERVER_ERROR); // 500
-            }
-        } catch (\Exception $e) {
-            return response()->json([
-                'message' => 'An error occurred while deleting the message',
-                'error' => config('app.debug') ? $e->getMessage() : null
-            ], Response::HTTP_INTERNAL_SERVER_ERROR);
-        }
+        // try {
+        //     if ($message->delete()) {
+        //         return response()->json(['message' => 'Message deleted successfully'], Response::HTTP_OK); // 200
+        //     } else {
+        //         return response()->json(['message' => 'Failed to delete message'], Response::HTTP_INTERNAL_SERVER_ERROR); // 500
+        //     }
+        // } catch (\Exception $e) {
+        //     return response()->json([
+        //         'message' => 'An error occurred while deleting the message',
+        //         'error' => config('app.debug') ? $e->getMessage() : null
+        //     ], Response::HTTP_INTERNAL_SERVER_ERROR);
+        // }
     }
 }
