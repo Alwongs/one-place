@@ -39,9 +39,9 @@ class MessageController extends Controller
             return response()->json(['message' => 'Message not found'], Response::HTTP_NOT_FOUND); // 404
         }
 
-        // if ($message->user_id !== auth()->id()) {
-        //     return response()->json(['message' => 'You are not authorized to delete this message'], Response::HTTP_FORBIDDEN); // 403
-        // }
+        if ($message->user_id !== auth()->id()) {
+            return response()->json(['message' => 'You are not authorized to delete this message'], Response::HTTP_FORBIDDEN); // 403
+        }
 
         try {
             if ($message->delete()) {
