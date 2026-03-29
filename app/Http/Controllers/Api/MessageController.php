@@ -34,7 +34,7 @@ class MessageController extends Controller
 
     public function deleteMessage($id)
     {
-        return auth()->id;
+        return auth()->id();
         // $message = Message::find($id);
         // if (!$message) {
         //     return response()->json(['message' => 'Message not found'], Response::HTTP_NOT_FOUND); // 404
