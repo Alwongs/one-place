@@ -27,10 +27,14 @@ use App\Http\Controllers\Api\LogController;
 |
 */
 
+Route::get('/', function() {
+    return '<h1>Home is OK</h1>';
+});
 
-
+// put in auth middleware
 Route::get('/messages', [MessageController::class, 'index']);
 Route::post('/messages', [MessageController::class, 'store']);
+Route::delete('/messages/delete/{id}', [MessageController::class, 'deleteMessage']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', function (Request $request) {
