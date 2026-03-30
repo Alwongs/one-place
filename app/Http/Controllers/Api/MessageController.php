@@ -10,6 +10,13 @@ use Illuminate\Http\Response;
 
 class MessageController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('app.access:chat');
+        // $this->middleware('app.access:chat')->only(['index', 'store']);
+        // $this->middleware('app.access:chat')->except(['show']);    
+    }  
+
     // Получить все сообщения (сортировка по дате)
     public function index()
     {      

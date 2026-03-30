@@ -10,6 +10,14 @@ use App\Helpers\EventHelper;
 
 class DashboardController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('app.access:dashboard');
+        // $this->middleware('app.access:dashboard')->only(['index', 'store']);
+        // $this->middleware('app.access:dashboard')->except(['show']);    
+    }
+
+
     public function index()
     {
         $events = Event::where('user_id', Auth::id())->get();

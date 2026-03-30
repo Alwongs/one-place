@@ -13,6 +13,13 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('app.access:events');
+        // $this->middleware('app.access:events')->only(['index', 'store']);
+        // $this->middleware('app.access:events')->except(['show']);    
+    }
+
     public function index()
     {
         return response()->json(['events' => Event::where('user_id', Auth::id())->get()]);

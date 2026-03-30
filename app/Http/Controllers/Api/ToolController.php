@@ -12,6 +12,13 @@ use Illuminate\Support\Facades\Auth;
 
 class ToolController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('app.access:tools');
+        // $this->middleware('app.access:tools')->only(['index', 'store']);
+        // $this->middleware('app.access:tools')->except(['show']);    
+    }
+
     /**
      * Display a listing of the resource.
      */

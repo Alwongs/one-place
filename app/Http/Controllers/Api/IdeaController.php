@@ -10,6 +10,13 @@ use App\Http\Resources\IdeaResource;
 
 class IdeaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('app.access:ideas');
+        // $this->middleware('app.access:ideas')->only(['index', 'store']);
+        // $this->middleware('app.access:ideas')->except(['show']);    
+    }    
+
     /**
      * Display a listing of the resource.
      */

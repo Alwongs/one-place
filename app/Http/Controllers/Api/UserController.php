@@ -11,6 +11,13 @@ use App\Http\Resources\UserResource;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('app.access:users');
+        // $this->middleware('app.access:users')->only(['index', 'store']);
+        // $this->middleware('app.access:users')->except(['show']);    
+    }
+
     /**
      * Display a listing of the resource.
      */

@@ -7,15 +7,37 @@ use App\Models\ScheduleDay;
 use Illuminate\Http\Request;
 use App\Http\Resources\ScheduleResource;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 use App\Helpers\ScheduleDayHelper;
 
 class ScheduleController extends Controller
 {
+    protected $userId;
+
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            $authUser = Auth::user();
+            if ($authUser && $authUser->role === 'M') {
+                $rootUser = User::where('is_root', 1)->first();
+                $this->userId = $rootUser ? $rootUser->id : null;
+            } else {
+                $this->userId = $authUser ? $authUser->id : null;
+            }
+            return $next($request);
+        });
+
+        $this->middleware('app.access:schedule');
+        // $this->middleware('app.access:schedule')->only(['index', 'store']);
+        // $this->middleware('app.access:schedule')->except(['show']);         
+    }
+
+
     public function getDaysInYearCount($start, $end)
     {
         $counts = [];
         foreach (range($start, $end) as $year) {
-            $counts["year_{$year}"] = ScheduleDay::where('user_id', Auth::id())
+            $counts["year_{$year}"] = ScheduleDay::where('user_id', $this->userId)
                 ->where('year', $year)
                 ->count();
         }
@@ -26,7 +48,7 @@ class ScheduleController extends Controller
     {
         $counts = [];
         foreach (range(1, 12) as $month) {
-            $counts["month_{$month}"] = ScheduleDay::where('user_id', Auth::id())
+            $counts["month_{$month}"] = ScheduleDay::where('user_id', $this->userId)
                 ->where('year', $year)
                 ->where('month', $month)
                 ->count();
@@ -36,7 +58,7 @@ class ScheduleController extends Controller
 
     public function getYearMonthDays($year, $month)
     {
-        $schedule_days = ScheduleDay::where('user_id', Auth::id())
+        $schedule_days = ScheduleDay::where('user_id', $this->userId)
             ->where('year', $year)
             ->where('month', $month)
             ->orderBy('timestamp', 'ASC')
@@ -64,7 +86,7 @@ class ScheduleController extends Controller
 
     public function deleteMonth($year, $month)
     {
-        ScheduleDay::where('user_id', Auth::id())
+        ScheduleDay::where('user_id', $this->userId)
             ->where('year', $year)
             ->where('month', $month)
             ->delete();

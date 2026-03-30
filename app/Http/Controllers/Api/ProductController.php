@@ -10,6 +10,13 @@ use App\Http\Resources\ProductResource;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('app.access:products');
+        // $this->middleware('app.access:products')->only(['index', 'store']);
+        // $this->middleware('app.access:products')->except(['show']);    
+    }  
+
     /**
      * Display a listing of the resource.
      */

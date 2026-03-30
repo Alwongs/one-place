@@ -12,6 +12,13 @@ use App\Helpers\TaskHelper;
 
 class TaskController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('app.access:tasks');
+        // $this->middleware('app.access:tasks')->only(['index', 'store']);
+        // $this->middleware('app.access:tasks')->except(['show']);    
+    }  
+
     public function index()
     {
         $tasks = Task::where('user_id', Auth::id())->orderBy('rate', 'DESC')->orderBy('position', 'ASC')->get();
